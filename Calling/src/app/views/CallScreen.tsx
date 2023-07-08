@@ -104,50 +104,54 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   );
   // const videoTileStyles = { root: { height: '300px', width: '400px', border: '1px solid #999' } };
   const videoTileStyles = { root: { height: '205px', width: '500px', border: '1px solid #999' } };
-  
-  return (
-  <>
-    <CallCompositeContainer {...props} adapter={adapter} />
-    <FluentThemeProvider>
-    
-    <div style={{ marginTop: '0px' }}>
-    <VideoTile
-      userId="UserIdPlaceholder"
-      styles={videoTileStyles}
-      displayName={'Maximus Aurelius'}
-      renderElement={null}
-      isMirrored={true}
-      onRenderPlaceholder={onRenderPlaceholder}
-    />
-    </div>
+  const thumsup = { root: { height: '200px', width: '200px', position: 'relative', top: "50px", left: "600px" } }
 
-    <VideoTile
-      userId="UserIdPlaceholder"
-      styles={videoTileStyles}
-      displayName={'Maximus Aurelius'}
-      renderElement={null}
-      isMirrored={true}
-      onRenderPlaceholder={onRenderPlaceholder}
-    />
-    <VideoTile
-      userId="UserIdPlaceholder"
-      styles={videoTileStyles}
-      displayName={'Maximus Aurelius'}
-      renderElement={null}
-      isMirrored={true}
-      onRenderPlaceholder={onRenderPlaceholder}
-    />
-    
-    <VideoTile
-      userId="UserIdPlaceholder"
-      styles={videoTileStyles}
-      displayName={'Maximus Aurelius'}
-      renderElement={null}
-      isMirrored={true}
-      onRenderPlaceholder={onRenderPlaceholder}
-    />
-    </FluentThemeProvider>  
-  </>
+  return (
+    <>
+      <CallCompositeContainer {...props} adapter={adapter} />
+      <FluentThemeProvider>
+
+        <div style={{ marginTop: '0px' }}>
+          <VideoTile
+            userId="UserIdPlaceholder"
+            styles={videoTileStyles}
+            displayName={'Maximus Aurelius'}
+            renderElement={null}
+            isMirrored={true}
+            onRenderPlaceholder={onRenderPlaceholder}
+          />
+        </div>
+
+        <VideoTile
+          userId="UserIdPlaceholder"
+          styles={videoTileStyles}
+          displayName={'Maximus Aurelius'}
+          renderElement={null}
+          isMirrored={true}
+          onRenderPlaceholder={onRenderPlaceholder}
+        />
+        <VideoTile
+          userId="UserIdPlaceholder"
+          styles={videoTileStyles}
+          displayName={'Maximus Aurelius'}
+          renderElement={null}
+          isMirrored={true}
+          onRenderPlaceholder={onRenderPlaceholder}
+        />
+
+        <VideoTile
+          userId="UserIdPlaceholder"
+          styles={videoTileStyles}
+          displayName={'Maximus Aurelius'}
+          renderElement={null}
+          isMirrored={true}
+          onRenderPlaceholder={onRenderPlaceholder}
+        />
+        <img src={`${window.location.origin}/images/thums-up.png`} style={{
+          height: '200px', width: '200px', position: 'relative', top: "-400px", left: "500px"
+        }} />
+      </FluentThemeProvider>
+    </>
   )
 };
 
