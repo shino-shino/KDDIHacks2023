@@ -85,13 +85,52 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
     afterCreate
   );
 
-  const onRenderPlaceholder = (): JSX.Element => (
+  // 犬gif用
+  // const onRenderPlaceholder = (): JSX.Element => (
+  //   <Stack>
+  //     <img
+  //       src="https://media.giphy.com/media/4Zo41lhzKt6iZ8xff9/giphy.gif"
+  //       style={{
+  //         borderRadius: '150px',
+  //         width: '150px',
+  //         position: 'absolute',
+  //         margin: 'auto',
+  //         left: 0,
+  //         right: 0,
+  //         top: 0,
+  //         bottom: 0
+  //       }}
+  //     />
+  //   </Stack>
+  // );
+
+  // ito_negative用
+  // const onRenderPlaceholder_ito_negative = (): JSX.Element => (
+  //   <Stack>
+  //     <img
+  //       src={`${window.location.origin}/avatar_img/ito_negative.png`}
+  //       style={{
+  //         borderRadius: '170px',
+  //         width: '170px',
+  //         position: 'absolute',
+  //         margin: 'auto',
+  //         left: 0,
+  //         right: 0,
+  //         top: 0,
+  //         bottom: 0
+  //       }}
+  //     />
+  //   </Stack>
+  // );
+
+  // ito_normal用
+  const onRenderPlaceholder_ito_normal = (): JSX.Element => (
     <Stack>
       <img
-        src="https://media.giphy.com/media/4Zo41lhzKt6iZ8xff9/giphy.gif"
+        src={`${window.location.origin}/avatar_img/ito_normal.png`}
         style={{
-          borderRadius: '150px',
-          width: '150px',
+          borderRadius: '170px',
+          width: '170px',
           position: 'absolute',
           margin: 'auto',
           left: 0,
@@ -102,54 +141,289 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
       />
     </Stack>
   );
+
+  // ito_positive用
+  // const onRenderPlaceholder_ito_positive = (): JSX.Element => (
+  //   <Stack>
+  //     <img
+  //       src={`${window.location.origin}/avatar_img/ito_positive.png`}
+  //       style={{
+  //         borderRadius: '170px',
+  //         width: '170px',
+  //         position: 'absolute',
+  //         margin: 'auto',
+  //         left: 0,
+  //         right: 0,
+  //         top: 0,
+  //         bottom: 0
+  //       }}
+  //     />
+  //   </Stack>
+  // );
+
+  // shinohara_negative用
+  // const onRenderPlaceholder_shinohara_negative = (): JSX.Element => (
+  //   <Stack>
+  //     <img
+  //       src={`${window.location.origin}/avatar_img/shinohara_negative.png`}
+  //       style={{
+  //         borderRadius: '170px',
+  //         width: '170px',
+  //         position: 'absolute',
+  //         margin: 'auto',
+  //         left: 0,
+  //         right: 0,
+  //         top: 0,
+  //         bottom: 0
+  //       }}
+  //     />
+  //   </Stack>
+  // );
+
+  // shinohara_normal用
+  const onRenderPlaceholder_shinohara_normal = (): JSX.Element => (
+    <Stack>
+      <img
+        src={`${window.location.origin}/avatar_img/shinohara_normal.png`}
+        style={{
+          borderRadius: '170px',
+          width: '170px',
+          position: 'absolute',
+          margin: 'auto',
+          left: 0,
+          right: 0,
+          top: 0,
+          bottom: 0
+        }}
+      />
+    </Stack>
+  );
+
+  // shinohara_positive用
+  // const onRenderPlaceholder_shinohara_positive = (): JSX.Element => (
+  //   <Stack>
+  //     <img
+  //       src={`${window.location.origin}/avatar_img/shinohara_positive.png`}
+  //       style={{
+  //         borderRadius: '170px',
+  //         width: '170px',
+  //         position: 'absolute',
+  //         margin: 'auto',
+  //         left: 0,
+  //         right: 0,
+  //         top: 0,
+  //         bottom: 0
+  //       }}
+  //     />
+  //   </Stack>
+  // );
+
+  // shiroishi_negative用
+  // const onRenderPlaceholder_shiroishi_negative = (): JSX.Element => (
+  //   <Stack>
+  //     <img
+  //       src={`${window.location.origin}/avatar_img/shiroishi_negative.png`}
+  //       style={{
+  //         borderRadius: '170px',
+  //         width: '170px',
+  //         position: 'absolute',
+  //         margin: 'auto',
+  //         left: 0,
+  //         right: 0,
+  //         top: 0,
+  //         bottom: 0
+  //       }}
+  //     />
+  //   </Stack>
+  // );
+
+  // shiroishi_normal用
+  const onRenderPlaceholder_shiroishi_normal = (): JSX.Element => (
+    <Stack>
+      <img
+        src={`${window.location.origin}/avatar_img/shiroishi_normal.png`}
+        style={{
+          borderRadius: '170px',
+          width: '170px',
+          position: 'absolute',
+          margin: 'auto',
+          left: 0,
+          right: 0,
+          top: 0,
+          bottom: 0
+        }}
+      />
+    </Stack>
+  );
+
+  // shiroishi_positive用
+  // const onRenderPlaceholder_shiroishi_positive = (): JSX.Element => (
+  //   <Stack>
+  //     <img
+  //       src={`${window.location.origin}/avatar_img/shiroishi_positive.png`}
+  //       style={{
+  //         borderRadius: '170px',
+  //         width: '170px',
+  //         position: 'absolute',
+  //         margin: 'auto',
+  //         left: 0,
+  //         right: 0,
+  //         top: 0,
+  //         bottom: 0
+  //       }}
+  //     />
+  //   </Stack>
+  // );
+
+  // miyamura_negative用
+  // const onRenderPlaceholder_miyamura_negative = (): JSX.Element => (
+  //   <Stack>
+  //     <img
+  //       src={`${window.location.origin}/avatar_img/miyamura_negative.png`}
+  //       style={{
+  //         borderRadius: '170px',
+  //         width: '170px',
+  //         position: 'absolute',
+  //         margin: 'auto',
+  //         left: 0,
+  //         right: 0,
+  //         top: 0,
+  //         bottom: 0
+  //       }}
+  //     />
+  //   </Stack>
+  // );
+
+  // miyamura_normal用
+  const onRenderPlaceholder_miyamura_normal = (): JSX.Element => (
+    <Stack>
+      <img
+        src={`${window.location.origin}/avatar_img/miyamura_normal.png`}
+        style={{
+          borderRadius: '170px',
+          width: '170px',
+          position: 'absolute',
+          margin: 'auto',
+          left: 0,
+          right: 0,
+          top: 0,
+          bottom: 0
+        }}
+      />
+    </Stack>
+  );
+
+  // miyamura_positive用
+  // const onRenderPlaceholder_miyamura_positive = (): JSX.Element => (
+  //   <Stack>
+  //     <img
+  //       src={`${window.location.origin}/avatar_img/miyamura_positive.png`}
+  //       style={{
+  //         borderRadius: '170px',
+  //         width: '170px',
+  //         position: 'absolute',
+  //         margin: 'auto',
+  //         left: 0,
+  //         right: 0,
+  //         top: 0,
+  //         bottom: 0
+  //       }}
+  //     />
+  //   </Stack>
+  // );
+
   // const videoTileStyles = { root: { height: '300px', width: '400px', border: '1px solid #999' } };
   const videoTileStyles = { root: { height: '205px', width: '500px', border: '1px solid #999' } };
-  const thumsup = { root: { height: '200px', width: '200px', position: 'relative', top: "50px", left: "600px" } }
 
   return (
     <>
       <CallCompositeContainer {...props} adapter={adapter} />
       <FluentThemeProvider>
 
-        <div style={{ marginTop: '0px' }}>
+        <div style={{ marginTop: '0px', display: 'flex', alignItems: 'center' }}>
           <VideoTile
             userId="UserIdPlaceholder"
             styles={videoTileStyles}
-            displayName={'Maximus Aurelius'}
+            displayName={'Iさん'}
             renderElement={null}
             isMirrored={true}
-            onRenderPlaceholder={onRenderPlaceholder}
+            onRenderPlaceholder={onRenderPlaceholder_ito_normal}
           />
+
+          <img src={`${window.location.origin}/reaction_img/iine.png`} style={{
+            height: '200px', width: '200px'
+          }} />
+          {/* <img src={`${window.location.origin}/reaction_img/megahonn.png`} style={{
+        height: '200px', width: '200px'
+      }} /> */}
+          {/* <img src={`${window.location.origin}/reaction_img/yonemoto.png`} style={{
+        height: '200px', width: '200px'
+      }} /> */}
         </div>
 
-        <VideoTile
-          userId="UserIdPlaceholder"
-          styles={videoTileStyles}
-          displayName={'Maximus Aurelius'}
-          renderElement={null}
-          isMirrored={true}
-          onRenderPlaceholder={onRenderPlaceholder}
-        />
-        <VideoTile
-          userId="UserIdPlaceholder"
-          styles={videoTileStyles}
-          displayName={'Maximus Aurelius'}
-          renderElement={null}
-          isMirrored={true}
-          onRenderPlaceholder={onRenderPlaceholder}
-        />
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <VideoTile
+            userId="UserIdPlaceholder"
+            styles={videoTileStyles}
+            displayName={'Sさん'}
+            renderElement={null}
+            isMirrored={true}
+            onRenderPlaceholder={onRenderPlaceholder_shinohara_normal}
+          />
 
-        <VideoTile
-          userId="UserIdPlaceholder"
-          styles={videoTileStyles}
-          displayName={'Maximus Aurelius'}
-          renderElement={null}
-          isMirrored={true}
-          onRenderPlaceholder={onRenderPlaceholder}
-        />
-        <img src={`${window.location.origin}/images/thums-up.png`} style={{
-          height: '200px', width: '200px', position: 'relative', top: "-400px", left: "500px"
-        }} />
+          {/* <img src={`${window.location.origin}/reaction_img/iine.png`} style={{
+        height: '200px', width: '200px'
+      }} /> */}
+          <img src={`${window.location.origin}/reaction_img/megahonn.png`} style={{
+            height: '200px', width: '200px'
+          }} />
+          {/* <img src={`${window.location.origin}/reaction_img/yonemoto.png`} style={{
+        height: '200px', width: '200px'
+      }} /> */}
+        </div>
+
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <VideoTile
+            userId="UserIdPlaceholder"
+            styles={videoTileStyles}
+            displayName={'Sさん'}
+            renderElement={null}
+            isMirrored={true}
+            onRenderPlaceholder={onRenderPlaceholder_shiroishi_normal}
+          />
+
+          {/* <img src={`${window.location.origin}/reaction_img/iine.png`} style={{
+        height: '200px', width: '200px'
+      }} /> */}
+          {/* <img src={`${window.location.origin}/reaction_img/megahonn.png`} style={{
+        height: '200px', width: '200px'
+      }} /> */}
+          <img src={`${window.location.origin}/reaction_img/yonemoto.png`} style={{
+            height: '200px', width: '200px'
+          }} />
+        </div>
+
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <VideoTile
+            userId="UserIdPlaceholder"
+            styles={videoTileStyles}
+            displayName={'Mさん'}
+            renderElement={null}
+            isMirrored={true}
+            onRenderPlaceholder={onRenderPlaceholder_miyamura_normal}
+          />
+
+          <img src={`${window.location.origin}/reaction_img/iine.png`} style={{
+            height: '200px', width: '200px'
+          }} />
+          {/* <img src={`${window.location.origin}/reaction_img/megahonn.png`} style={{
+        height: '200px', width: '200px'
+      }} /> */}
+          {/* <img src={`${window.location.origin}/reaction_img/yonemoto.png`} style={{
+        height: '200px', width: '200px'
+      }} /> */}
+        </div>
+
       </FluentThemeProvider>
     </>
   )
