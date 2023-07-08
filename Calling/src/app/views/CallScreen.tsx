@@ -86,42 +86,42 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   );
 
   // 犬gif用
-  const onRenderPlaceholder = (): JSX.Element => (
-    <Stack>
-      <img
-        src="https://media.giphy.com/media/4Zo41lhzKt6iZ8xff9/giphy.gif"
-        style={{
-          borderRadius: '150px',
-          width: '150px',
-          position: 'absolute',
-          margin: 'auto',
-          left: 0,
-          right: 0,
-          top: 0,
-          bottom: 0
-        }}
-      />
-    </Stack>
-  );
+  // const onRenderPlaceholder = (): JSX.Element => (
+  //   <Stack>
+  //     <img
+  //       src="https://media.giphy.com/media/4Zo41lhzKt6iZ8xff9/giphy.gif"
+  //       style={{
+  //         borderRadius: '150px',
+  //         width: '150px',
+  //         position: 'absolute',
+  //         margin: 'auto',
+  //         left: 0,
+  //         right: 0,
+  //         top: 0,
+  //         bottom: 0
+  //       }}
+  //     />
+  //   </Stack>
+  // );
 
   // ito_negative用
-  const onRenderPlaceholder_ito_negative = (): JSX.Element => (
-    <Stack>
-      <img
-        src={`${window.location.origin}/avatar_img/ito_negative.png`}
-        style={{
-          borderRadius: '170px',
-          width: '170px',
-          position: 'absolute',
-          margin: 'auto',
-          left: 0,
-          right: 0,
-          top: 0,
-          bottom: 0
-        }}
-      />
-    </Stack>
-  );
+  // const onRenderPlaceholder_ito_negative = (): JSX.Element => (
+  //   <Stack>
+  //     <img
+  //       src={`${window.location.origin}/avatar_img/ito_negative.png`}
+  //       style={{
+  //         borderRadius: '170px',
+  //         width: '170px',
+  //         position: 'absolute',
+  //         margin: 'auto',
+  //         left: 0,
+  //         right: 0,
+  //         top: 0,
+  //         bottom: 0
+  //       }}
+  //     />
+  //   </Stack>
+  // );
 
   // ito_normal用
   const onRenderPlaceholder_ito_normal = (): JSX.Element => (
@@ -143,42 +143,42 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   );
 
   // ito_positive用
-  const onRenderPlaceholder_ito_positive = (): JSX.Element => (
-    <Stack>
-      <img
-        src={`${window.location.origin}/avatar_img/ito_positive.png`}
-        style={{
-          borderRadius: '170px',
-          width: '170px',
-          position: 'absolute',
-          margin: 'auto',
-          left: 0,
-          right: 0,
-          top: 0,
-          bottom: 0
-        }}
-      />
-    </Stack>
-  );
+  // const onRenderPlaceholder_ito_positive = (): JSX.Element => (
+  //   <Stack>
+  //     <img
+  //       src={`${window.location.origin}/avatar_img/ito_positive.png`}
+  //       style={{
+  //         borderRadius: '170px',
+  //         width: '170px',
+  //         position: 'absolute',
+  //         margin: 'auto',
+  //         left: 0,
+  //         right: 0,
+  //         top: 0,
+  //         bottom: 0
+  //       }}
+  //     />
+  //   </Stack>
+  // );
 
   // shinohara_negative用
-  const onRenderPlaceholder_shinohara_negative = (): JSX.Element => (
-    <Stack>
-      <img
-        src={`${window.location.origin}/avatar_img/shinohara_negative.png`}
-        style={{
-          borderRadius: '170px',
-          width: '170px',
-          position: 'absolute',
-          margin: 'auto',
-          left: 0,
-          right: 0,
-          top: 0,
-          bottom: 0
-        }}
-      />
-    </Stack>
-  );
+  // const onRenderPlaceholder_shinohara_negative = (): JSX.Element => (
+  //   <Stack>
+  //     <img
+  //       src={`${window.location.origin}/avatar_img/shinohara_negative.png`}
+  //       style={{
+  //         borderRadius: '170px',
+  //         width: '170px',
+  //         position: 'absolute',
+  //         margin: 'auto',
+  //         left: 0,
+  //         right: 0,
+  //         top: 0,
+  //         bottom: 0
+  //       }}
+  //     />
+  //   </Stack>
+  // );
 
   // shinohara_normal用
   const onRenderPlaceholder_shinohara_normal = (): JSX.Element => (
@@ -200,42 +200,42 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   );
 
   // shinohara_positive用
-  const onRenderPlaceholder_shinohara_positive = (): JSX.Element => (
-    <Stack>
-      <img
-        src={`${window.location.origin}/avatar_img/shinohara_positive.png`}
-        style={{
-          borderRadius: '170px',
-          width: '170px',
-          position: 'absolute',
-          margin: 'auto',
-          left: 0,
-          right: 0,
-          top: 0,
-          bottom: 0
-        }}
-      />
-    </Stack>
-  );
+  // const onRenderPlaceholder_shinohara_positive = (): JSX.Element => (
+  //   <Stack>
+  //     <img
+  //       src={`${window.location.origin}/avatar_img/shinohara_positive.png`}
+  //       style={{
+  //         borderRadius: '170px',
+  //         width: '170px',
+  //         position: 'absolute',
+  //         margin: 'auto',
+  //         left: 0,
+  //         right: 0,
+  //         top: 0,
+  //         bottom: 0
+  //       }}
+  //     />
+  //   </Stack>
+  // );
 
   // shiroishi_negative用
-  const onRenderPlaceholder_shiroishi_negative = (): JSX.Element => (
-    <Stack>
-      <img
-        src={`${window.location.origin}/avatar_img/shiroishi_negative.png`}
-        style={{
-          borderRadius: '170px',
-          width: '170px',
-          position: 'absolute',
-          margin: 'auto',
-          left: 0,
-          right: 0,
-          top: 0,
-          bottom: 0
-        }}
-      />
-    </Stack>
-  );
+  // const onRenderPlaceholder_shiroishi_negative = (): JSX.Element => (
+  //   <Stack>
+  //     <img
+  //       src={`${window.location.origin}/avatar_img/shiroishi_negative.png`}
+  //       style={{
+  //         borderRadius: '170px',
+  //         width: '170px',
+  //         position: 'absolute',
+  //         margin: 'auto',
+  //         left: 0,
+  //         right: 0,
+  //         top: 0,
+  //         bottom: 0
+  //       }}
+  //     />
+  //   </Stack>
+  // );
 
   // shiroishi_normal用
   const onRenderPlaceholder_shiroishi_normal = (): JSX.Element => (
@@ -257,42 +257,42 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   );
 
   // shiroishi_positive用
-  const onRenderPlaceholder_shiroishi_positive = (): JSX.Element => (
-    <Stack>
-      <img
-        src={`${window.location.origin}/avatar_img/shiroishi_positive.png`}
-        style={{
-          borderRadius: '170px',
-          width: '170px',
-          position: 'absolute',
-          margin: 'auto',
-          left: 0,
-          right: 0,
-          top: 0,
-          bottom: 0
-        }}
-      />
-    </Stack>
-  );
+  // const onRenderPlaceholder_shiroishi_positive = (): JSX.Element => (
+  //   <Stack>
+  //     <img
+  //       src={`${window.location.origin}/avatar_img/shiroishi_positive.png`}
+  //       style={{
+  //         borderRadius: '170px',
+  //         width: '170px',
+  //         position: 'absolute',
+  //         margin: 'auto',
+  //         left: 0,
+  //         right: 0,
+  //         top: 0,
+  //         bottom: 0
+  //       }}
+  //     />
+  //   </Stack>
+  // );
 
   // miyamura_negative用
-  const onRenderPlaceholder_miyamura_negative = (): JSX.Element => (
-    <Stack>
-      <img
-        src={`${window.location.origin}/avatar_img/miyamura_negative.png`}
-        style={{
-          borderRadius: '170px',
-          width: '170px',
-          position: 'absolute',
-          margin: 'auto',
-          left: 0,
-          right: 0,
-          top: 0,
-          bottom: 0
-        }}
-      />
-    </Stack>
-  );
+  // const onRenderPlaceholder_miyamura_negative = (): JSX.Element => (
+  //   <Stack>
+  //     <img
+  //       src={`${window.location.origin}/avatar_img/miyamura_negative.png`}
+  //       style={{
+  //         borderRadius: '170px',
+  //         width: '170px',
+  //         position: 'absolute',
+  //         margin: 'auto',
+  //         left: 0,
+  //         right: 0,
+  //         top: 0,
+  //         bottom: 0
+  //       }}
+  //     />
+  //   </Stack>
+  // );
 
   // miyamura_normal用
   const onRenderPlaceholder_miyamura_normal = (): JSX.Element => (
@@ -314,23 +314,23 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   );
 
   // miyamura_positive用
-  const onRenderPlaceholder_miyamura_positive = (): JSX.Element => (
-    <Stack>
-      <img
-        src={`${window.location.origin}/avatar_img/miyamura_positive.png`}
-        style={{
-          borderRadius: '170px',
-          width: '170px',
-          position: 'absolute',
-          margin: 'auto',
-          left: 0,
-          right: 0,
-          top: 0,
-          bottom: 0
-        }}
-      />
-    </Stack>
-  );
+  // const onRenderPlaceholder_miyamura_positive = (): JSX.Element => (
+  //   <Stack>
+  //     <img
+  //       src={`${window.location.origin}/avatar_img/miyamura_positive.png`}
+  //       style={{
+  //         borderRadius: '170px',
+  //         width: '170px',
+  //         position: 'absolute',
+  //         margin: 'auto',
+  //         left: 0,
+  //         right: 0,
+  //         top: 0,
+  //         bottom: 0
+  //       }}
+  //     />
+  //   </Stack>
+  // );
 
   // const videoTileStyles = { root: { height: '300px', width: '400px', border: '1px solid #999' } };
   const videoTileStyles = { root: { height: '205px', width: '500px', border: '1px solid #999' } };
