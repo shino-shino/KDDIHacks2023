@@ -108,7 +108,7 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   // const onRenderPlaceholder_ito_negative = (): JSX.Element => (
   //   <Stack>
   //     <img
-  //       src={`${window.location.origin}/avatar_img/ito_negative.png`}
+  //       src="https://i.imgur.com/nZsd3vM.png"
   //       style={{
   //         borderRadius: '170px',
   //         width: '170px',
@@ -127,7 +127,7 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   const onRenderPlaceholder_ito_normal = (): JSX.Element => (
     <Stack>
       <img
-        src={`${window.location.origin}/avatar_img/ito_normal.png`}
+        src="https://i.imgur.com/sJ0Fm5N.png"
         style={{
           borderRadius: '170px',
           width: '170px',
@@ -146,7 +146,7 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   // const onRenderPlaceholder_ito_positive = (): JSX.Element => (
   //   <Stack>
   //     <img
-  //       src={`${window.location.origin}/avatar_img/ito_positive.png`}
+  //       src="https://i.imgur.com/dpBrZGX.png"
   //       style={{
   //         borderRadius: '170px',
   //         width: '170px',
@@ -165,7 +165,7 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   // const onRenderPlaceholder_shinohara_negative = (): JSX.Element => (
   //   <Stack>
   //     <img
-  //       src={`${window.location.origin}/avatar_img/shinohara_negative.png`}
+  //       src="https://i.imgur.com/1Jk2eib.png"
   //       style={{
   //         borderRadius: '170px',
   //         width: '170px',
@@ -184,7 +184,7 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   const onRenderPlaceholder_shinohara_normal = (): JSX.Element => (
     <Stack>
       <img
-        src={`${window.location.origin}/avatar_img/shinohara_normal.png`}
+        src="https://i.imgur.com/wNCKJJS.png"
         style={{
           borderRadius: '170px',
           width: '170px',
@@ -203,7 +203,7 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   // const onRenderPlaceholder_shinohara_positive = (): JSX.Element => (
   //   <Stack>
   //     <img
-  //       src={`${window.location.origin}/avatar_img/shinohara_positive.png`}
+  //       src="https://i.imgur.com/YzbpWfN.png"
   //       style={{
   //         borderRadius: '170px',
   //         width: '170px',
@@ -222,7 +222,7 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   // const onRenderPlaceholder_shiroishi_negative = (): JSX.Element => (
   //   <Stack>
   //     <img
-  //       src={`${window.location.origin}/avatar_img/shiroishi_negative.png`}
+  //       src="https://i.imgur.com/E4wzzid.png"
   //       style={{
   //         borderRadius: '170px',
   //         width: '170px',
@@ -241,7 +241,7 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   const onRenderPlaceholder_shiroishi_normal = (): JSX.Element => (
     <Stack>
       <img
-        src={`${window.location.origin}/avatar_img/shiroishi_normal.png`}
+        src="https://i.imgur.com/oXyrTui.png"
         style={{
           borderRadius: '170px',
           width: '170px',
@@ -260,7 +260,7 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   // const onRenderPlaceholder_shiroishi_positive = (): JSX.Element => (
   //   <Stack>
   //     <img
-  //       src={`${window.location.origin}/avatar_img/shiroishi_positive.png`}
+  //       src="https://i.imgur.com/V7AV0k4.png"
   //       style={{
   //         borderRadius: '170px',
   //         width: '170px',
@@ -279,7 +279,7 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   // const onRenderPlaceholder_miyamura_negative = (): JSX.Element => (
   //   <Stack>
   //     <img
-  //       src={`${window.location.origin}/avatar_img/miyamura_negative.png`}
+  //       src="https://i.imgur.com/Vezm74Y.png"
   //       style={{
   //         borderRadius: '170px',
   //         width: '170px',
@@ -298,7 +298,7 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   const onRenderPlaceholder_miyamura_normal = (): JSX.Element => (
     <Stack>
       <img
-        src={`${window.location.origin}/avatar_img/miyamura_normal.png`}
+        src="https://i.imgur.com/bY1wqNC.png"
         style={{
           borderRadius: '170px',
           width: '170px',
@@ -317,7 +317,7 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   // const onRenderPlaceholder_miyamura_positive = (): JSX.Element => (
   //   <Stack>
   //     <img
-  //       src={`${window.location.origin}/avatar_img/miyamura_positive.png`}
+  //       src="https://i.imgur.com/VYO6ij3.png"
   //       style={{
   //         borderRadius: '170px',
   //         width: '170px',
@@ -350,13 +350,13 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
         onRenderPlaceholder={onRenderPlaceholder_ito_normal}
       />
       
-      <img src={`${window.location.origin}/reaction_img/iine.png`} style={{
+      <img src="https://i.imgur.com/KZILTky.png" style={{
         height: '200px', width: '200px'
       }} />
-      {/* <img src={`${window.location.origin}/reaction_img/megahonn.png`} style={{
+      {/* <img src="https://i.imgur.com/9IaSKbt.png" style={{
         height: '200px', width: '200px'
       }} /> */}
-      {/* <img src={`${window.location.origin}/reaction_img/yonemoto.png`} style={{
+      {/* <img src="https://i.imgur.com/EbOS6Fs.png" style={{
         height: '200px', width: '200px'
       }} /> */}
     </div>
@@ -371,13 +371,13 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
         onRenderPlaceholder={onRenderPlaceholder_shinohara_normal}
       />
 
-      {/* <img src={`${window.location.origin}/reaction_img/iine.png`} style={{
+      {/* <img src="https://i.imgur.com/KZILTky.png" style={{
         height: '200px', width: '200px'
       }} /> */}
-      <img src={`${window.location.origin}/reaction_img/megahonn.png`} style={{
+      <img src="https://i.imgur.com/9IaSKbt.png" style={{
         height: '200px', width: '200px'
       }} />
-      {/* <img src={`${window.location.origin}/reaction_img/yonemoto.png`} style={{
+      {/* <img src="https://i.imgur.com/EbOS6Fs.png" style={{
         height: '200px', width: '200px'
       }} /> */}
     </div>
@@ -392,13 +392,13 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
         onRenderPlaceholder={onRenderPlaceholder_shiroishi_normal}
       />
 
-      {/* <img src={`${window.location.origin}/reaction_img/iine.png`} style={{
+      {/* <img src="https://i.imgur.com/KZILTky.png" style={{
         height: '200px', width: '200px'
       }} /> */}
-      {/* <img src={`${window.location.origin}/reaction_img/megahonn.png`} style={{
+      {/* <img src="https://i.imgur.com/9IaSKbt.png" style={{
         height: '200px', width: '200px'
       }} /> */}
-      <img src={`${window.location.origin}/reaction_img/yonemoto.png`} style={{
+      <img src="https://i.imgur.com/EbOS6Fs.png" style={{
         height: '200px', width: '200px'
       }} />
     </div>
@@ -413,13 +413,13 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
         onRenderPlaceholder={onRenderPlaceholder_miyamura_normal}
       />
 
-      <img src={`${window.location.origin}/reaction_img/iine.png`} style={{
+      <img src="https://i.imgur.com/KZILTky.png" style={{
         height: '200px', width: '200px'
       }} />
-      {/* <img src={`${window.location.origin}/reaction_img/megahonn.png`} style={{
+      {/* <img src="https://i.imgur.com/9IaSKbt.png" style={{
         height: '200px', width: '200px'
       }} /> */}
-      {/* <img src={`${window.location.origin}/reaction_img/yonemoto.png`} style={{
+      {/* <img src="https://i.imgur.com/EbOS6Fs.png" style={{
         height: '200px', width: '200px'
       }} /> */}
     </div>
