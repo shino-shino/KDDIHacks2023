@@ -9,13 +9,16 @@ import {
   useAzureCommunicationCallAdapter,
   CommonCallAdapter,
   CallAdapter,
-  toFlatCommunicationIdentifier
+  toFlatCommunicationIdentifier,
 } from '@azure/communication-react';
 
 import React, { useCallback, useMemo, useRef } from 'react';
 import { createAutoRefreshingCredential } from '../utils/credential';
 import { WEB_APP_TITLE } from '../utils/AppUtils';
 import { CallCompositeContainer } from './CallCompositeContainer';
+
+import { VideoTile, FluentThemeProvider } from '@azure/communication-react';
+import { Stack } from '@fluentui/react';
 
 export interface CallScreenProps {
   token: string;
@@ -82,7 +85,40 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
     afterCreate
   );
 
-  return <CallCompositeContainer {...props} adapter={adapter} />;
+  const onRenderPlaceholder = (): JSX.Element => (
+    <Stack>
+      <img
+        src="https://media.giphy.com/media/4Zo41lhzKt6iZ8xff9/giphy.gif"
+        style={{
+          borderRadius: '150px',
+          width: '150px',
+          position: 'absolute',
+          margin: 'auto',
+          left: 0,
+          right: 0,
+          top: 0,
+          bottom: 0
+        }}
+      />
+    </Stack>
+  );
+  const videoTileStyles = { root: { height: '300px', width: '400px', border: '1px solid #999' } };
+  
+  return (
+  <>
+    <CallCompositeContainer {...props} adapter={adapter} />
+    <FluentThemeProvider>
+    <VideoTile
+      userId="UserIdPlaceholder"
+      styles={videoTileStyles}
+      displayName={'Maximus Aurelius'}
+      renderElement={null}
+      isMirrored={true}
+      onRenderPlaceholder={onRenderPlaceholder}
+    />
+    </FluentThemeProvider>  
+  </>
+  )
 };
 
 const convertPageStateToString = (state: CallAdapterState): string => {
