@@ -33,40 +33,130 @@ const FaceContext = createContext({
   changeFaceType: (n: string) => { }
 });
 
+const ItoStampContext = createContext({
+  itoStampF: false,
+  changeItoStampF: (f: boolean) => { }
+});
+
+const ShiroishiStampContext = createContext({
+  shiroishiStampF: false,
+  changeShiroishiStampF: (f: boolean) => { }
+});
+
+const ShinoharaStampContext = createContext({
+  shinoharaStampF: false,
+  changeShinoharaStampF: (f: boolean) => { }
+});
+
+const MiyamuraStampContext = createContext({
+  miyamuraStampF: false,
+  changeMiyamuraStampF: (f: boolean) => { }
+});
+
 export const CallScreen = (props: CallScreenProps): JSX.Element => {
   const { token, userId } = props;
   const callIdRef = useRef<string>();
   const pressInterval = 10;
 
   const [faceType, setFaceType] = useState<string>('normal');
+  const [itoStampF, setItoStampF] = useState<boolean>(false);
+  const [shiroishiStampF, setShiroishiStampF] = useState<boolean>(false);
+  const [shinoharaStampF, setShinoharaStampF] = useState<boolean>(false);
+  const [miyamuraStampF, setMiyamuraStampF] = useState<boolean>(false);
 
   const changeFaceType = (s: string): void => {
     setFaceType(s);
+  };
+
+  const changeItoStampF = (f: boolean): void => {
+    setItoStampF(f);
+  };
+  const changeShiroishiStampF = (f: boolean): void => {
+    setShiroishiStampF(f);
+  };
+  const changeShinoharaStampF = (f: boolean): void => {
+    setShinoharaStampF(f);
+  };
+  const changeMiyamuraStampF = (f: boolean): void => {
+    setMiyamuraStampF(f);
   };
 
   // Key Down
 
   const keyFunction = useCallback((event) => {
     switch (event.keyCode) {
+      // A
       case 65:
         setTimeout(() => {
-          console.log("A is pressed!");
           changeFaceType('negative');
         }, pressInterval);
 
         break;
+      // S
       case 83:
         setTimeout(() => {
-          console.log("B is pressed!");
           changeFaceType('normal');
+          console.log(faceType);
         }, pressInterval);
         break;
+      // D
       case 68:
         setTimeout(() => {
-          console.log("C is pressed!");
           changeFaceType('positive');
         }, pressInterval);
         break;
+      // F
+      case 70:
+        setTimeout(() => {
+          changeItoStampF(true);
+          console.log(itoStampF);
+        }, pressInterval);
+        break;
+      // R
+      case 82:
+        setTimeout(() => {
+          changeItoStampF(false);
+          console.log(itoStampF);
+        }, pressInterval);
+        break;
+      // G
+      case 71:
+        setTimeout(() => {
+          changeShinoharaStampF(true);
+        }, pressInterval);
+        break;
+      // T
+      case 84:
+        setTimeout(() => {
+          changeShinoharaStampF(false);
+        }, pressInterval);
+        break;
+      // H
+      case 72:
+        setTimeout(() => {
+          changeShiroishiStampF(true);
+        }, pressInterval);
+        break;
+      // Y
+      case 89:
+        setTimeout(() => {
+          changeShiroishiStampF(false);
+        }, pressInterval);
+        break;
+      // J
+      case 74:
+        setTimeout(() => {
+          changeMiyamuraStampF(true);
+        }, pressInterval);
+        break;
+      // U
+      case 85:
+        setTimeout(() => {
+          changeMiyamuraStampF(false);
+        }, pressInterval);
+        break;
+
+
     }
   }, []);
 
@@ -109,9 +199,17 @@ export const CallScreen = (props: CallScreenProps): JSX.Element => {
   }, [token, userId]);
 
   return (
-    <FaceContext.Provider value={{ faceType, changeFaceType }}>
-      <AzureCommunicationCallScreen afterCreate={afterCallAdapterCreate} credential={credential} {...props} />
-    </FaceContext.Provider>
+    <MiyamuraStampContext.Provider value={{ miyamuraStampF, changeMiyamuraStampF }}>
+      <ShiroishiStampContext.Provider value={{ shiroishiStampF, changeShiroishiStampF }}>
+        <ShinoharaStampContext.Provider value={{ shinoharaStampF, changeShinoharaStampF }}>
+          <ItoStampContext.Provider value={{ itoStampF, changeItoStampF }}>
+            <FaceContext.Provider value={{ faceType, changeFaceType }}>
+              <AzureCommunicationCallScreen afterCreate={afterCallAdapterCreate} credential={credential} {...props} />
+            </FaceContext.Provider>
+          </ItoStampContext.Provider>
+        </ShinoharaStampContext.Provider>
+      </ShiroishiStampContext.Provider>
+    </MiyamuraStampContext.Provider>
   );
 };
 
@@ -379,6 +477,8 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
 
   }
 
+
+
   // 宮村切り替え
   const onRenderPlaceholder_Miyamura = () => {
     switch (useContext(FaceContext).faceType) {
@@ -459,6 +559,45 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
     }
   }
 
+  const ItoStamp = () => {
+    if (useContext(ItoStampContext).itoStampF) {
+      return (<div><img src="https://i.imgur.com/KZILTky.png" style={{
+        height: '200px', width: '200px'
+      }} /></div>);
+    } else {
+      return (<div></div>);
+    }
+  }
+
+  const ShinoharaStamp = () => {
+    if (useContext(ShinoharaStampContext).shinoharaStampF) {
+      return (<div><img src="https://i.imgur.com/9IaSKbt.png" style={{
+        height: '200px', width: '200px'
+      }} /></div>);
+    } else {
+      return (<div></div>);
+    }
+  }
+
+  const ShiroishiStamp = () => {
+    if (useContext(ShiroishiStampContext).shiroishiStampF) {
+      return (<div><img src="https://i.imgur.com/EbOS6Fs.png" style={{
+        height: '200px', width: '200px'
+      }} /></div>);
+    } else {
+      return (<div></div>);
+    }
+  }
+
+  const MiyamuraStamp = () => {
+    if (useContext(MiyamuraStampContext).miyamuraStampF) {
+      return (<div><img src="https://i.imgur.com/KZILTky.png" style={{
+        height: '200px', width: '200px'
+      }} /></div>);
+    } else {
+      return (<div></div>);
+    }
+  }
 
   // const videoTileStyles = { root: { height: '300px', width: '400px', border: '1px solid #999' } };
   const videoTileStyles = { root: { height: '205px', width: '500px', border: '1px solid #999' } };
@@ -477,10 +616,11 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
             isMirrored={true}
             onRenderPlaceholder={onRenderPlaceholder_Ito}
           />
+          <ItoStamp />
 
-          <img src="https://i.imgur.com/KZILTky.png" style={{
+          {/* <img src="https://i.imgur.com/KZILTky.png" style={{
             height: '200px', width: '200px'
-          }} />
+          }} /> */}
           {/* <img src="https://i.imgur.com/9IaSKbt.png" style={{
         height: '200px', width: '200px'
       }} /> */}
@@ -499,12 +639,15 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
             onRenderPlaceholder={onRenderPlaceholder_Shinohara}
           />
 
+          <ShinoharaStamp />
+
           {/* <img src="https://i.imgur.com/KZILTky.png" style={{
         height: '200px', width: '200px'
       }} /> */}
-          <img src="https://i.imgur.com/9IaSKbt.png" style={{
+
+          {/* <img src="https://i.imgur.com/9IaSKbt.png" style={{
             height: '200px', width: '200px'
-          }} />
+          }} /> */}
           {/* <img src="https://i.imgur.com/EbOS6Fs.png" style={{
         height: '200px', width: '200px'
       }} /> */}
@@ -520,15 +663,17 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
             onRenderPlaceholder={onRenderPlaceholder_Shiroishi}
           />
 
+          <ShiroishiStamp />
+
           {/* <img src="https://i.imgur.com/KZILTky.png" style={{
         height: '200px', width: '200px'
       }} /> */}
           {/* <img src="https://i.imgur.com/9IaSKbt.png" style={{
         height: '200px', width: '200px'
       }} /> */}
-          <img src="https://i.imgur.com/EbOS6Fs.png" style={{
+          {/* <img src="https://i.imgur.com/EbOS6Fs.png" style={{
             height: '200px', width: '200px'
-          }} />
+          }} /> */}
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -541,9 +686,11 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
             onRenderPlaceholder={onRenderPlaceholder_Miyamura}
           />
 
-          <img src="https://i.imgur.com/KZILTky.png" style={{
+          <MiyamuraStamp />
+
+          {/* <img src="https://i.imgur.com/KZILTky.png" style={{
             height: '200px', width: '200px'
-          }} />
+          }} /> */}
           {/* <img src="https://i.imgur.com/9IaSKbt.png" style={{
         height: '200px', width: '200px'
       }} /> */}
