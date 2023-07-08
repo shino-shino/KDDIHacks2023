@@ -51,20 +51,20 @@ export const CallScreen = (props: CallScreenProps): JSX.Element => {
       case 65:
         setTimeout(() => {
           console.log("A is pressed!");
-          changeFaceType('normal');
+          changeFaceType('negative');
         }, pressInterval);
 
         break;
-      case 66:
+      case 83:
         setTimeout(() => {
           console.log("B is pressed!");
-          changeFaceType('positive');
+          changeFaceType('normal');
         }, pressInterval);
         break;
-      case 67:
+      case 68:
         setTimeout(() => {
           console.log("C is pressed!");
-          changeFaceType('negative');
+          changeFaceType('positive');
         }, pressInterval);
         break;
     }
