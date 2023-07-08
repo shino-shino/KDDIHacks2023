@@ -12,7 +12,7 @@ import {
   toFlatCommunicationIdentifier,
 } from '@azure/communication-react';
 
-import React, { useCallback, useMemo, useRef } from 'react';
+import React, { useCallback, useMemo, useRef, useEffect, useState, createContext, useContext } from 'react';
 import { createAutoRefreshingCredential } from '../utils/credential';
 import { WEB_APP_TITLE } from '../utils/AppUtils';
 import { CallCompositeContainer } from './CallCompositeContainer';
@@ -28,10 +28,57 @@ export interface CallScreenProps {
   displayName: string;
 }
 
+const FaceContext = createContext({
+  faceType: 'normal',
+  changeFaceType: (n: string) => { }
+});
+
 export const CallScreen = (props: CallScreenProps): JSX.Element => {
   const { token, userId } = props;
   const callIdRef = useRef<string>();
+  const pressInterval = 10;
 
+  const [faceType, setFaceType] = useState<string>('normal');
+
+  const changeFaceType = (s: string): void => {
+    setFaceType(s);
+  };
+
+  // Key Down
+
+  const keyFunction = useCallback((event) => {
+    switch (event.keyCode) {
+      case 65:
+        setTimeout(() => {
+          console.log("A is pressed!");
+          changeFaceType('normal');
+        }, pressInterval);
+
+        break;
+      case 66:
+        setTimeout(() => {
+          console.log("B is pressed!");
+          changeFaceType('positive');
+        }, pressInterval);
+        break;
+      case 67:
+        setTimeout(() => {
+          console.log("C is pressed!");
+          changeFaceType('negative');
+        }, pressInterval);
+        break;
+    }
+  }, []);
+
+  useEffect(() => {
+    document.addEventListener("keydown", keyFunction, false);
+    return () => {
+      document.removeEventListener("keydown", keyFunction, false);
+    }
+  }, [keyFunction]);
+
+
+  // Azure
   const subscribeAdapterEvents = useCallback((adapter: CommonCallAdapter) => {
     adapter.on('error', (e) => {
       // Error is already acted upon by the Call composite, but the surrounding application could
@@ -61,7 +108,11 @@ export const CallScreen = (props: CallScreenProps): JSX.Element => {
     return createAutoRefreshingCredential(toFlatCommunicationIdentifier(userId), token);
   }, [token, userId]);
 
-  return <AzureCommunicationCallScreen afterCreate={afterCallAdapterCreate} credential={credential} {...props} />;
+  return (
+    <FaceContext.Provider value={{ faceType, changeFaceType }}>
+      <AzureCommunicationCallScreen afterCreate={afterCallAdapterCreate} credential={credential} {...props} />
+    </FaceContext.Provider>
+  );
 };
 
 type AzureCommunicationCallScreenProps = CallScreenProps & {
@@ -85,6 +136,329 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
     afterCreate
   );
 
+  // 伊藤切り替え
+  const onRenderPlaceholder_Ito = () => {
+    switch (useContext(FaceContext).faceType) {
+      case 'normal':
+        return (
+          <Stack>
+            <img
+              src="https://i.imgur.com/sJ0Fm5N.png"
+              style={{
+                borderRadius: '170px',
+                width: '170px',
+                position: 'absolute',
+                margin: 'auto',
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0
+              }}
+            />
+          </Stack>
+        );
+      case 'positive':
+        return (
+          <Stack>
+            <img
+              src="https://i.imgur.com/dpBrZGX.png"
+              style={{
+                borderRadius: '170px',
+                width: '170px',
+                position: 'absolute',
+                margin: 'auto',
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0
+              }}
+            />
+          </Stack>
+        );
+
+      case 'negative':
+        return (
+          <Stack>
+            <img
+              src="https://i.imgur.com/nZsd3vM.png"
+              style={{
+                borderRadius: '170px',
+                width: '170px',
+                position: 'absolute',
+                margin: 'auto',
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0
+              }}
+            />
+          </Stack>
+        );
+      default:
+        return (
+          <Stack>
+            <img
+              src="https://i.imgur.com/sJ0Fm5N.png"
+              style={{
+                borderRadius: '170px',
+                width: '170px',
+                position: 'absolute',
+                margin: 'auto',
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0
+              }}
+            />
+          </Stack>
+        );
+
+    }
+
+  }
+
+  // 城石切り替え
+  const onRenderPlaceholder_Shiroishi = () => {
+    switch (useContext(FaceContext).faceType) {
+      case 'normal':
+        return (
+          <Stack>
+            <img
+              src="https://i.imgur.com/oXyrTui.png"
+              style={{
+                borderRadius: '170px',
+                width: '170px',
+                position: 'absolute',
+                margin: 'auto',
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0
+              }}
+            />
+          </Stack>
+        );
+      case 'positive':
+        return (
+          <Stack>
+            <img
+              src="https://i.imgur.com/V7AV0k4.png"
+              style={{
+                borderRadius: '170px',
+                width: '170px',
+                position: 'absolute',
+                margin: 'auto',
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0
+              }}
+            />
+          </Stack>
+        );
+
+      case 'negative':
+        return (
+          <Stack>
+            <img
+              src="https://i.imgur.com/E4wzzid.png"
+              style={{
+                borderRadius: '170px',
+                width: '170px',
+                position: 'absolute',
+                margin: 'auto',
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0
+              }}
+            />
+          </Stack>
+        );
+      default:
+        return (
+          <Stack>
+            <img
+              src="https://i.imgur.com/oXyrTui.png"
+              style={{
+                borderRadius: '170px',
+                width: '170px',
+                position: 'absolute',
+                margin: 'auto',
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0
+              }}
+            />
+          </Stack>
+        );
+
+    }
+
+  }
+
+  // 篠原切り替え
+  const onRenderPlaceholder_Shinohara = () => {
+    switch (useContext(FaceContext).faceType) {
+      case 'normal':
+        return (
+          <Stack>
+            <img
+              src="https://i.imgur.com/wNCKJJS.png"
+              style={{
+                borderRadius: '170px',
+                width: '170px',
+                position: 'absolute',
+                margin: 'auto',
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0
+              }}
+            />
+          </Stack>
+        );
+      case 'positive':
+        return (
+          <Stack>
+            <img
+              src="https://i.imgur.com/YzbpWfN.png"
+              style={{
+                borderRadius: '170px',
+                width: '170px',
+                position: 'absolute',
+                margin: 'auto',
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0
+              }}
+            />
+          </Stack>
+        );
+
+      case 'negative':
+        return (
+          <Stack>
+            <img
+              src="https://i.imgur.com/1Jk2eib.png"
+              style={{
+                borderRadius: '170px',
+                width: '170px',
+                position: 'absolute',
+                margin: 'auto',
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0
+              }}
+            />
+          </Stack>
+        );
+      default:
+        return (
+          <Stack>
+            <img
+              src="https://i.imgur.com/wNCKJJS.png"
+              style={{
+                borderRadius: '170px',
+                width: '170px',
+                position: 'absolute',
+                margin: 'auto',
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0
+              }}
+            />
+          </Stack>
+        );
+
+    }
+
+  }
+
+  // 宮村切り替え
+  const onRenderPlaceholder_Miyamura = () => {
+    switch (useContext(FaceContext).faceType) {
+      case 'normal':
+        return (
+          <Stack>
+            <img
+              src="https://i.imgur.com/bY1wqNC.png"
+              style={{
+                borderRadius: '170px',
+                width: '170px',
+                position: 'absolute',
+                margin: 'auto',
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0
+              }}
+            />
+          </Stack>
+        );
+      case 'positive':
+        return (
+          <Stack>
+            <img
+              src="https://i.imgur.com/VYO6ij3.png"
+              style={{
+                borderRadius: '170px',
+                width: '170px',
+                position: 'absolute',
+                margin: 'auto',
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0
+              }}
+            />
+          </Stack>
+        );
+
+      case 'negative':
+        return (
+          <Stack>
+            <img
+              src="https://i.imgur.com/Vezm74Y.png"
+              style={{
+                borderRadius: '170px',
+                width: '170px',
+                position: 'absolute',
+                margin: 'auto',
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0
+              }}
+            />
+          </Stack>
+        );
+      default:
+        return (
+          <Stack>
+            <img
+              src="https://i.imgur.com/bY1wqNC.png"
+              style={{
+                borderRadius: '170px',
+                width: '170px',
+                position: 'absolute',
+                margin: 'auto',
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0
+              }}
+            />
+          </Stack>
+        );
+
+    }
+
+  }
   // 犬gif用
   // const onRenderPlaceholder = (): JSX.Element => (
   //   <Stack>
@@ -108,7 +482,7 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   // const onRenderPlaceholder_ito_negative = (): JSX.Element => (
   //   <Stack>
   //     <img
-  //       src={`${window.location.origin}/avatar_img/ito_negative.png`}
+  //       src="https://i.imgur.com/nZsd3vM.png"
   //       style={{
   //         borderRadius: '170px',
   //         width: '170px',
@@ -124,29 +498,29 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   // );
 
   // ito_normal用
-  const onRenderPlaceholder_ito_normal = (): JSX.Element => (
-    <Stack>
-      <img
-        src={`${window.location.origin}/avatar_img/ito_normal.png`}
-        style={{
-          borderRadius: '170px',
-          width: '170px',
-          position: 'absolute',
-          margin: 'auto',
-          left: 0,
-          right: 0,
-          top: 0,
-          bottom: 0
-        }}
-      />
-    </Stack>
-  );
+  // const onRenderPlaceholder_ito_normal = (): JSX.Element => (
+  //   <Stack>
+  //     <img
+  //       src="https://i.imgur.com/sJ0Fm5N.png"
+  //       style={{
+  //         borderRadius: '170px',
+  //         width: '170px',
+  //         position: 'absolute',
+  //         margin: 'auto',
+  //         left: 0,
+  //         right: 0,
+  //         top: 0,
+  //         bottom: 0
+  //       }}
+  //     />
+  //   </Stack>
+  // );
 
   // ito_positive用
   // const onRenderPlaceholder_ito_positive = (): JSX.Element => (
   //   <Stack>
   //     <img
-  //       src={`${window.location.origin}/avatar_img/ito_positive.png`}
+  //       src="https://i.imgur.com/dpBrZGX.png"
   //       style={{
   //         borderRadius: '170px',
   //         width: '170px',
@@ -165,7 +539,7 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   // const onRenderPlaceholder_shinohara_negative = (): JSX.Element => (
   //   <Stack>
   //     <img
-  //       src={`${window.location.origin}/avatar_img/shinohara_negative.png`}
+  //       src="https://i.imgur.com/1Jk2eib.png"
   //       style={{
   //         borderRadius: '170px',
   //         width: '170px',
@@ -184,7 +558,7 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   const onRenderPlaceholder_shinohara_normal = (): JSX.Element => (
     <Stack>
       <img
-        src={`${window.location.origin}/avatar_img/shinohara_normal.png`}
+        src="https://i.imgur.com/wNCKJJS.png"
         style={{
           borderRadius: '170px',
           width: '170px',
@@ -203,7 +577,7 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   // const onRenderPlaceholder_shinohara_positive = (): JSX.Element => (
   //   <Stack>
   //     <img
-  //       src={`${window.location.origin}/avatar_img/shinohara_positive.png`}
+  //       src="https://i.imgur.com/YzbpWfN.png"
   //       style={{
   //         borderRadius: '170px',
   //         width: '170px',
@@ -222,7 +596,7 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   // const onRenderPlaceholder_shiroishi_negative = (): JSX.Element => (
   //   <Stack>
   //     <img
-  //       src={`${window.location.origin}/avatar_img/shiroishi_negative.png`}
+  //       src="https://i.imgur.com/E4wzzid.png"
   //       style={{
   //         borderRadius: '170px',
   //         width: '170px',
@@ -241,7 +615,7 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   const onRenderPlaceholder_shiroishi_normal = (): JSX.Element => (
     <Stack>
       <img
-        src={`${window.location.origin}/avatar_img/shiroishi_normal.png`}
+        src="https://i.imgur.com/oXyrTui.png"
         style={{
           borderRadius: '170px',
           width: '170px',
@@ -260,7 +634,7 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   // const onRenderPlaceholder_shiroishi_positive = (): JSX.Element => (
   //   <Stack>
   //     <img
-  //       src={`${window.location.origin}/avatar_img/shiroishi_positive.png`}
+  //       src="https://i.imgur.com/V7AV0k4.png"
   //       style={{
   //         borderRadius: '170px',
   //         width: '170px',
@@ -279,7 +653,7 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   // const onRenderPlaceholder_miyamura_negative = (): JSX.Element => (
   //   <Stack>
   //     <img
-  //       src={`${window.location.origin}/avatar_img/miyamura_negative.png`}
+  //       src="https://i.imgur.com/Vezm74Y.png"
   //       style={{
   //         borderRadius: '170px',
   //         width: '170px',
@@ -298,7 +672,7 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   const onRenderPlaceholder_miyamura_normal = (): JSX.Element => (
     <Stack>
       <img
-        src={`${window.location.origin}/avatar_img/miyamura_normal.png`}
+        src="https://i.imgur.com/bY1wqNC.png"
         style={{
           borderRadius: '170px',
           width: '170px',
@@ -317,7 +691,7 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
   // const onRenderPlaceholder_miyamura_positive = (): JSX.Element => (
   //   <Stack>
   //     <img
-  //       src={`${window.location.origin}/avatar_img/miyamura_positive.png`}
+  //       src="https://i.imgur.com/VYO6ij3.png"
   //       style={{
   //         borderRadius: '170px',
   //         width: '170px',
@@ -347,16 +721,16 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
             displayName={'Iさん'}
             renderElement={null}
             isMirrored={true}
-            onRenderPlaceholder={onRenderPlaceholder_ito_normal}
+            onRenderPlaceholder={onRenderPlaceholder_Ito}
           />
 
-          <img src={`${window.location.origin}/reaction_img/iine.png`} style={{
+          <img src="https://i.imgur.com/KZILTky.png" style={{
             height: '200px', width: '200px'
           }} />
-          {/* <img src={`${window.location.origin}/reaction_img/megahonn.png`} style={{
+          {/* <img src="https://i.imgur.com/9IaSKbt.png" style={{
         height: '200px', width: '200px'
       }} /> */}
-          {/* <img src={`${window.location.origin}/reaction_img/yonemoto.png`} style={{
+          {/* <img src="https://i.imgur.com/EbOS6Fs.png" style={{
         height: '200px', width: '200px'
       }} /> */}
         </div>
@@ -368,16 +742,16 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
             displayName={'Sさん'}
             renderElement={null}
             isMirrored={true}
-            onRenderPlaceholder={onRenderPlaceholder_shinohara_normal}
+            onRenderPlaceholder={onRenderPlaceholder_Shinohara}
           />
 
-          {/* <img src={`${window.location.origin}/reaction_img/iine.png`} style={{
+          {/* <img src="https://i.imgur.com/KZILTky.png" style={{
         height: '200px', width: '200px'
       }} /> */}
-          <img src={`${window.location.origin}/reaction_img/megahonn.png`} style={{
+          <img src="https://i.imgur.com/9IaSKbt.png" style={{
             height: '200px', width: '200px'
           }} />
-          {/* <img src={`${window.location.origin}/reaction_img/yonemoto.png`} style={{
+          {/* <img src="https://i.imgur.com/EbOS6Fs.png" style={{
         height: '200px', width: '200px'
       }} /> */}
         </div>
@@ -389,16 +763,16 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
             displayName={'Sさん'}
             renderElement={null}
             isMirrored={true}
-            onRenderPlaceholder={onRenderPlaceholder_shiroishi_normal}
+            onRenderPlaceholder={onRenderPlaceholder_Shiroishi}
           />
 
-          {/* <img src={`${window.location.origin}/reaction_img/iine.png`} style={{
+          {/* <img src="https://i.imgur.com/KZILTky.png" style={{
         height: '200px', width: '200px'
       }} /> */}
-          {/* <img src={`${window.location.origin}/reaction_img/megahonn.png`} style={{
+          {/* <img src="https://i.imgur.com/9IaSKbt.png" style={{
         height: '200px', width: '200px'
       }} /> */}
-          <img src={`${window.location.origin}/reaction_img/yonemoto.png`} style={{
+          <img src="https://i.imgur.com/EbOS6Fs.png" style={{
             height: '200px', width: '200px'
           }} />
         </div>
@@ -410,16 +784,16 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
             displayName={'Mさん'}
             renderElement={null}
             isMirrored={true}
-            onRenderPlaceholder={onRenderPlaceholder_miyamura_normal}
+            onRenderPlaceholder={onRenderPlaceholder_Miyamura}
           />
 
-          <img src={`${window.location.origin}/reaction_img/iine.png`} style={{
+          <img src="https://i.imgur.com/KZILTky.png" style={{
             height: '200px', width: '200px'
           }} />
-          {/* <img src={`${window.location.origin}/reaction_img/megahonn.png`} style={{
+          {/* <img src="https://i.imgur.com/9IaSKbt.png" style={{
         height: '200px', width: '200px'
       }} /> */}
-          {/* <img src={`${window.location.origin}/reaction_img/yonemoto.png`} style={{
+          {/* <img src="https://i.imgur.com/EbOS6Fs.png" style={{
         height: '200px', width: '200px'
       }} /> */}
         </div>
