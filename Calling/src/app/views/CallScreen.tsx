@@ -340,59 +340,89 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
     <CallCompositeContainer {...props} adapter={adapter} />
     <FluentThemeProvider>
     
-    <div style={{ marginTop: '0px' }}>
-    <VideoTile
-      userId="UserIdPlaceholder"
-      styles={videoTileStyles}
-      displayName={'Maximus Aurelius'}
-      renderElement={null}
-      isMirrored={true}
-      onRenderPlaceholder={onRenderPlaceholder_ito_normal}
-    />
+    <div style={{ marginTop: '0px', display: 'flex', alignItems: 'center' }}>
+      <VideoTile
+        userId="UserIdPlaceholder"
+        styles={videoTileStyles}
+        displayName={'Iさん'}
+        renderElement={null}
+        isMirrored={true}
+        onRenderPlaceholder={onRenderPlaceholder_ito_normal}
+      />
+      
+      <img src={`${window.location.origin}/reaction_img/iine.png`} style={{
+        height: '200px', width: '200px'
+      }} />
+      {/* <img src={`${window.location.origin}/reaction_img/megahonn.png`} style={{
+        height: '200px', width: '200px'
+      }} /> */}
+      {/* <img src={`${window.location.origin}/reaction_img/yonemoto.png`} style={{
+        height: '200px', width: '200px'
+      }} /> */}
     </div>
 
-    {/* <img src={`${window.location.origin}/reaction_img/megahonn.png`} style={{
-      height: '200px', width: '200px', position: 'relative', top: "-200px", left: "500px"
-    }} /> */}
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <VideoTile
+        userId="UserIdPlaceholder"
+        styles={videoTileStyles}
+        displayName={'Sさん'}
+        renderElement={null}
+        isMirrored={true}
+        onRenderPlaceholder={onRenderPlaceholder_shinohara_normal}
+      />
 
-    <VideoTile
-      userId="UserIdPlaceholder"
-      styles={videoTileStyles}
-      displayName={'Maximus Aurelius'}
-      renderElement={null}
-      isMirrored={true}
-      onRenderPlaceholder={onRenderPlaceholder_shinohara_normal}
-    />
+      {/* <img src={`${window.location.origin}/reaction_img/iine.png`} style={{
+        height: '200px', width: '200px'
+      }} /> */}
+      <img src={`${window.location.origin}/reaction_img/megahonn.png`} style={{
+        height: '200px', width: '200px'
+      }} />
+      {/* <img src={`${window.location.origin}/reaction_img/yonemoto.png`} style={{
+        height: '200px', width: '200px'
+      }} /> */}
+    </div>
 
-    {/* <img src={`${window.location.origin}/reaction_img/megahonn.png`} style={{
-      height: '200px', width: '200px', position: 'relative', top: "-200px", left: "500px"
-    }} /> */}
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <VideoTile
+        userId="UserIdPlaceholder"
+        styles={videoTileStyles}
+        displayName={'Sさん'}
+        renderElement={null}
+        isMirrored={true}
+        onRenderPlaceholder={onRenderPlaceholder_shiroishi_normal}
+      />
 
-    <VideoTile
-      userId="UserIdPlaceholder"
-      styles={videoTileStyles}
-      displayName={'Maximus Aurelius'}
-      renderElement={null}
-      isMirrored={true}
-      onRenderPlaceholder={onRenderPlaceholder_shiroishi_normal}
-    />
-
-    {/* <img src={`${window.location.origin}/reaction_img/iine.png`} style={{
-      height: '200px', width: '200px', position: 'relative', top: "-400px", left: "500px"
-    }} /> */}
+      {/* <img src={`${window.location.origin}/reaction_img/iine.png`} style={{
+        height: '200px', width: '200px'
+      }} /> */}
+      {/* <img src={`${window.location.origin}/reaction_img/megahonn.png`} style={{
+        height: '200px', width: '200px'
+      }} /> */}
+      <img src={`${window.location.origin}/reaction_img/yonemoto.png`} style={{
+        height: '200px', width: '200px'
+      }} />
+    </div>
     
-    <VideoTile
-      userId="UserIdPlaceholder"
-      styles={videoTileStyles}
-      displayName={'Maximus Aurelius'}
-      renderElement={null}
-      isMirrored={true}
-      onRenderPlaceholder={onRenderPlaceholder_miyamura_normal}
-    />
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <VideoTile
+        userId="UserIdPlaceholder"
+        styles={videoTileStyles}
+        displayName={'Mさん'}
+        renderElement={null}
+        isMirrored={true}
+        onRenderPlaceholder={onRenderPlaceholder_miyamura_normal}
+      />
 
-    <img src={`${window.location.origin}/reaction_img/iine.png`} style={{
-      height: '200px', width: '200px', position: 'relative', top: "-400px", left: "500px"
-    }} />
+      <img src={`${window.location.origin}/reaction_img/iine.png`} style={{
+        height: '200px', width: '200px'
+      }} />
+      {/* <img src={`${window.location.origin}/reaction_img/megahonn.png`} style={{
+        height: '200px', width: '200px'
+      }} /> */}
+      {/* <img src={`${window.location.origin}/reaction_img/yonemoto.png`} style={{
+        height: '200px', width: '200px'
+      }} /> */}
+    </div>
 
     </FluentThemeProvider>  
   </>
