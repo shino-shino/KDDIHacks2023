@@ -102,12 +102,42 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
       />
     </Stack>
   );
-  const videoTileStyles = { root: { height: '300px', width: '400px', border: '1px solid #999' } };
+  // const videoTileStyles = { root: { height: '300px', width: '400px', border: '1px solid #999' } };
+  const videoTileStyles = { root: { height: '205px', width: '500px', border: '1px solid #999' } };
   
   return (
   <>
     <CallCompositeContainer {...props} adapter={adapter} />
     <FluentThemeProvider>
+    
+    <div style={{ marginTop: '0px' }}>
+    <VideoTile
+      userId="UserIdPlaceholder"
+      styles={videoTileStyles}
+      displayName={'Maximus Aurelius'}
+      renderElement={null}
+      isMirrored={true}
+      onRenderPlaceholder={onRenderPlaceholder}
+    />
+    </div>
+
+    <VideoTile
+      userId="UserIdPlaceholder"
+      styles={videoTileStyles}
+      displayName={'Maximus Aurelius'}
+      renderElement={null}
+      isMirrored={true}
+      onRenderPlaceholder={onRenderPlaceholder}
+    />
+    <VideoTile
+      userId="UserIdPlaceholder"
+      styles={videoTileStyles}
+      displayName={'Maximus Aurelius'}
+      renderElement={null}
+      isMirrored={true}
+      onRenderPlaceholder={onRenderPlaceholder}
+    />
+    
     <VideoTile
       userId="UserIdPlaceholder"
       styles={videoTileStyles}
