@@ -34,7 +34,7 @@ const keyframes = `
       transform: translateX(0px);
     }
     100% {
-      transform: translateY(-200px);
+      transform: translateY(-100px);
     }
   }
 
@@ -43,7 +43,7 @@ const keyframes = `
       transform: translateX(0px);
     }
     100% {
-      transform: translateX(-500px);
+      transform: translateX(-200px);
     }
   }
 
@@ -52,7 +52,7 @@ const keyframes = `
       transform: translateX(0px);
     }
     100% {
-      transform: translateX(500px);
+      transform: translateX(200px);
     }
   }
 
