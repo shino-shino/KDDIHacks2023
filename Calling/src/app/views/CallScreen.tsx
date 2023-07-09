@@ -19,6 +19,7 @@ import { CallCompositeContainer } from './CallCompositeContainer';
 
 import { VideoTile, FluentThemeProvider } from '@azure/communication-react';
 import { Stack } from '@fluentui/react';
+import { stampStyleLeft, stampStyleRight, stampStyleUp, stampStyleVibration } from '../styles/Stamp.styles';
 
 export interface CallScreenProps {
   token: string;
@@ -563,7 +564,9 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
     if (useContext(ItoStampContext).itoStampF) {
       return (<div><img src="https://i.imgur.com/KZILTky.png" style={{
         height: '200px', width: '200px'
-      }} /></div>);
+      }}
+      className={stampStyleUp}
+      /></div>);
     } else {
       return (<div></div>);
     }
@@ -573,7 +576,9 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
     if (useContext(ShinoharaStampContext).shinoharaStampF) {
       return (<div><img src="https://i.imgur.com/9IaSKbt.png" style={{
         height: '200px', width: '200px'
-      }} /></div>);
+      }}
+      className={stampStyleVibration}
+      /></div>);
     } else {
       return (<div></div>);
     }
@@ -583,7 +588,9 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
     if (useContext(ShiroishiStampContext).shiroishiStampF) {
       return (<div><img src="https://i.imgur.com/EbOS6Fs.png" style={{
         height: '200px', width: '200px'
-      }} /></div>);
+      }}
+      // className={stampStyleLeft}
+      /></div>);
     } else {
       return (<div></div>);
     }
@@ -593,7 +600,9 @@ const AzureCommunicationCallScreen = (props: AzureCommunicationCallScreenProps):
     if (useContext(MiyamuraStampContext).miyamuraStampF) {
       return (<div><img src="https://i.imgur.com/KZILTky.png" style={{
         height: '200px', width: '200px'
-      }} /></div>);
+      }}
+      className={stampStyleUp}
+      /></div>);
     } else {
       return (<div></div>);
     }
